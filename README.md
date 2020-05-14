@@ -5,3 +5,26 @@
 ```powershell
     npm install react-router-dom --save
 ```
+
+### Some Components
+
+1. BrowserRouter: to add browser router capability
+2. Route: to add route component for each route
+3. Switch: to give hierarchy to routes
+
+```javascript
+    <Router>
+      <div className="App">
+        <NavBar />
+        <div id="page-body">
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/articles-list" component={ArticlesListPage} />
+            <Route path="/article/:name" component={ArticlePage} />
+            <Route component={NotFoundPage} />
+          </Switch>
+        </div>
+      </div>
+    </Router>
+```
