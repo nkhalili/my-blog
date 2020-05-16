@@ -28,3 +28,17 @@
       </div>
     </Router>
 ```
+
+## Send request to Backend
+
+fetch() is a built-in function. It is supported by most of the browsers.
+
+```javascript
+  fetch(URL, { method: 'POST', body: ...});
+```
+
+If you want to add Internet Explorer or other browsers support, run this
+
+```powershell
+  npm install whatwg-fetch --save
+```
