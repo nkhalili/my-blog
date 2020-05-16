@@ -42,3 +42,33 @@ If you want to add Internet Explorer or other browsers support, run this
 ```powershell
   npm install whatwg-fetch --save
 ```
+
+## Using React Hooks
+
+To manage state in our application we use React Hooks. State is a temporary place to save our information, e.g. information we have loaded from the server.
+
+**New way to add state** in the application is to use *React Hooks* (React 16.0.8+). React Hooks are functions which abstract the away state management for our components. In this way, we can use them in components which are not directly extending *React.Component* class.
+
+1. Add useState to map our states
+
+   ```javascript
+     import { useState } from 'react';
+     ...
+     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
+   ```
+
+2. To load data into our stats from backend server
+
+   ```javascript
+    import {useEffect} from 'react';
+    ...
+    useEffect(() => {
+      setArticleInfo({ upvotes: 3 });
+    });
+   ```
+  
+3. To show our states
+
+   ```javascript
+     <p>This post has been upvoted {articleInfo.upvotes} times</p>
+   ```
