@@ -70,7 +70,6 @@ To manage state in our application we use React Hooks. State is a temporary plac
    - To prevent useEffect to constantly update, pass empty array to its second parameter
    - To let useEffect updates on URL changes, add the parameter name to that empty array
 
-
 3. To show our states
 
    ```javascript
