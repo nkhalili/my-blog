@@ -75,3 +75,35 @@ To manage state in our application we use React Hooks. State is a temporary plac
    ```javascript
      <p>This post has been upvoted {articleInfo.upvotes} times</p>
    ```
+
+## Publishing
+
+To publish your frontend application use:
+
+```powershell
+  npm run build
+```
+
+Now must have a folder named '**build**'. Copy and paste this folder to your backend '**src**' folder.
+
+Open your *Server.js* file in your backend, and add your static files like this:
+
+```javascript
+  import path from 'path';
+  ...
+  const app = express();
+  app.use(express.static(path.join(__dirname, '/build')));
+  ...
+```
+
+- You don't need to install path separately, since it is included in NodeJS.
+
+Further, add this line to the end of your API calls:
+
+```javascript
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+  });
+```
+
+This allows to navigate between pages and process urls correctly.
